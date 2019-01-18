@@ -50,3 +50,20 @@ class Queue {
     return node.value;
   }
 }
+
+function main() {
+  let q = new Queue();
+  q.enqueue('Tauhida');
+  q.enqueue('Joe');
+  q.enqueue('Tim');
+  // display(q);
+
+  console.log(q.dequeue());
+  // display(q);
+  q.enqueue('Alison');
+  q.enqueue('Chris');
+  console.log(q.dequeue());
+  // display(q);
+}
+
+main();

@@ -23,6 +23,7 @@ class Stack {
     // have the pointer point to the top
     const node = new _Node(data, this.top);
     this.top = node;
+    // this.top= new _Node(data, this.top)
   }
   pop() {
     //in order to remove the top of the stack, you have to point
@@ -33,3 +34,8 @@ class Stack {
     return node.data;
   }
 }
+
+function main() {
+  let stack = new Stack();
+}
+main();
