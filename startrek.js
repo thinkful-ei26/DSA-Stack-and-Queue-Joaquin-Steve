@@ -25,12 +25,11 @@ class _StarTrek {
     this.top = node.next;
     return node.data;
   }
-//   peek() {
-//     const node = this.top;
-//     return node.value;
-//   }
 }
-
+function peek(stack) {
+  let node = stack.top;
+  return node.data;
+}
 function isEmpty(stack) {
   //helper function to check if stack is empty
   let top = stack.top;
@@ -38,9 +37,10 @@ function isEmpty(stack) {
   else return false;
 }
 function display(stack) {
+  let newStack = stack;
   //to display the stack
-  while (!isEmpty(stack)) {
-    console.log(stack.pop());
+  while (!isEmpty(newStack)) {
+    console.log(newStack.pop());
   }
 }
 
@@ -57,9 +57,11 @@ function main() {
   //   st.push('Spock');
   //   st.push('McCoy');
   //   st.pop();
-  st.peek();
+  //   st.peek();
   display(st);
-  console.log(JSON.stringify(st.peek()));
+  //   console.log(isEmpty(st));
+  //   console.log(peek(st));
+  //   console.log(JSON.stringify(st.peek()));
 }
 
 main();
