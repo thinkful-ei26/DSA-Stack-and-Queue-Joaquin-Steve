@@ -45,16 +45,17 @@ function display(stack) {
 }
 
 function matchingParenthesis(s) {
-  let stack = new _StarTrek()
+  let stack = new _StarTrek();
 
   for (let i = 0; i < s.length; i++) {
-    console.log(s[i])
-    let word = s[i]
-    if (word === '(') stack.push(s[i])
-    if (word === ')') stack.pop()
+    let word = s[i];
+s
+
+      if (word === '(') stack.push(s[i]);
+      if (word === ')') stack.pop();
   }
 
-  return isEmpty(stack)
+  return isEmpty(stack);
 }
 
 // get a string, push the entire string to a fresh stack.
@@ -93,7 +94,11 @@ function main() {
   // display(st)
   // console.log(isEmpty(st))
   //   console.log(is_palindrome('1001'));
+<<<<<<< HEAD
   console.log(matchingParenthesis('( ) ) ( )'))
+=======
+  console.log(matchingParenthesis('( ) ) ( )'));
+>>>>>>> 289e5af07b23bf44e412c64248d3fd2618fc1c03
 }
 
 main()
