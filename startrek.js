@@ -25,17 +25,28 @@ class _StarTrek {
     this.top = node.next;
     return node.data;
   }
+
+  peek() {
+    const node = this.top;
+    return node;
+  }
 }
+
+// function peek(st) {
+//   const node = this.top;
+//   return node;
+// }
 
 function main() {
   let st = new _StarTrek();
 
   st.push('Captain Kirk');
   st.push('Scotty');
-  st.push('Spock');
-  st.push('McCoy');
-  st.pop();
-  console.log(JSON.stringify(st));
+  //   st.push('Spock');
+  //   st.push('McCoy');
+  //   st.pop();
+  st.peek();
+  console.log(JSON.stringify(st.peek()));
 }
 
 main();
