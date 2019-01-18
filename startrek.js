@@ -44,6 +44,12 @@ function display(stack) {
   }
 }
 
+function matchingParenthesis(s) {
+  for (let i = 0; i < s.length; i++) {
+    console.log(s[i])
+  }
+}
+
 function is_palindrome(s) {
   s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
   let compareString = ''
@@ -68,16 +74,16 @@ function is_palindrome(s) {
 
 function main() {
   // let st = new _StarTrek()
-
   // st.push('Captain Kirk')
   // st.push('Scotty')
-  //   st.push('Spock');
-  //   st.push('McCoy');
-  //   st.pop();
+  // st.push('Spock')
+  // st.push('McCoy')
+  // st.pop()
   // st.peek()
   // display(st)
   // console.log(isEmpty(st))
-  console.log(is_palindrome('1001'))
+  // console.log(is_palindrome('1001'))
+  matchingParenthesis('()')
 }
 
 main()
