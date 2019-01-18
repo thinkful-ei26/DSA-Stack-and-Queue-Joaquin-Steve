@@ -49,12 +49,13 @@ function matchingParenthesis(s) {
 
   for (let i = 0; i < s.length; i++) {
     let word = s[i];
-s
 
       if (word === '(') stack.push(s[i]);
-      if (word === ')') stack.pop();
+      if (word === ')'){
+        if (!stack.top){
+          stack.pop()
+      }}
   }
-
   return isEmpty(stack);
 }
 
