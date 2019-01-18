@@ -48,16 +48,21 @@ function display(stack) {
 function matchingParenthesis(s) {
   let stack = new _StarTrek()
 
-  // for (let i = 0; i < s.length; i++) {
-  //   stack.push(s[i])
-  // }
-  for (let i = 0; i < s.length; i++) {
-    let word = s[i]
-    if (word === '(') stack.push('+1')
-    if (word === ')') stack.pop()
+  s.forEach(element => {
+    stack.push(element)
+  })
+
+  for (let i = 0; i <= s.length; i++) {
+    stack.pop()
   }
 
-  return isEmpty(stack)
+  // for (let i = 0; i < s.length; i++) {
+  //   let word = s[i]
+  //   if (word === '(') stack.push('+1')
+  //   if (word === ')') stack.pop()
+  // }
+
+  // return isEmpty(stack)
 }
 
 function is_palindrome(s) {
