@@ -44,31 +44,45 @@ function display(stack) {
   }
 }
 
-// function peek(st) {
-//   const node = this.top;
-//   return node;
-// }
+function is_palindrome(s) {
+  s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
+  let compareString = ''
+  let stack = new _StarTrek()
+  for (let i = 0; i < s.length; i++) {
+    stack.push(s[i]) //push everything onto the stack
+  }
+  while (!isEmpty(stack)) {
+    //pop it off in reverse order and store that in a string
+    compareString += stack.pop()
+  }
+  // console.log('1 ' + compareString)
+  // console.log(2, s)
+  if (compareString == s) {
+    return true
+  } else return false
+}
+
+// console.log(is_palindrome('A man, a plan, a canal: Panama'))
+// console.log(is_palindrome('1001'))
+// console.log(is_palindrome('Tauhida'))
 
 function main() {
-  let st = new _StarTrek()
+  // let st = new _StarTrek()
 
-  st.push('Captain Kirk')
-  st.push('Scotty')
+  // st.push('Captain Kirk')
+  // st.push('Scotty')
   //   st.push('Spock');
   //   st.push('McCoy');
   //   st.pop();
   // st.peek()
-  display(st)
-  console.log(isEmpty(st))
-  // console.log(JSON.stringify(st.peek()))
-  //   st.peek();
-  //   console.log(isEmpty(st));
-  //   console.log(peek(st));
-  //   console.log(JSON.stringify(st.peek()));
+  // display(st)
+  // console.log(isEmpty(st))
+  console.log(is_palindrome('1001'))
 }
 
 main()
 
+module.export = _StarTrek
 // Using the stack class above, implement the following helper functions outside the stack class
 // peek: allows you to look at the top of the stack without removing it
 // display: to display the stack. What is the first item in your stack?
