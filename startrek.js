@@ -23,6 +23,7 @@ class _StarTrek {
   pop(data) {
     const node = this.top
     this.top = node.next
+
     return node.data
   }
 }
@@ -45,9 +46,18 @@ function display(stack) {
 }
 
 function matchingParenthesis(s) {
+  let stack = new _StarTrek()
+
+  // for (let i = 0; i < s.length; i++) {
+  //   stack.push(s[i])
+  // }
   for (let i = 0; i < s.length; i++) {
-    console.log(s[i])
+    let word = s[i]
+    if (word === '(') stack.push('+1')
+    if (word === ')') stack.pop()
   }
+
+  return isEmpty(stack)
 }
 
 function is_palindrome(s) {
@@ -83,7 +93,7 @@ function main() {
   // display(st)
   // console.log(isEmpty(st))
   // console.log(is_palindrome('1001'))
-  matchingParenthesis('()')
+  console.log(matchingParenthesis('()('))
 }
 
 main()
