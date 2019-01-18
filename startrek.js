@@ -25,10 +25,22 @@ class _StarTrek {
     this.top = node.next;
     return node.data;
   }
+//   peek() {
+//     const node = this.top;
+//     return node.value;
+//   }
+}
 
-  peek() {
-    const node = this.top;
-    return node;
+function isEmpty(stack) {
+  //helper function to check if stack is empty
+  let top = stack.top;
+  if (!top) return true;
+  else return false;
+}
+function display(stack) {
+  //to display the stack
+  while (!isEmpty(stack)) {
+    console.log(stack.pop());
   }
 }
 
@@ -46,6 +58,7 @@ function main() {
   //   st.push('McCoy');
   //   st.pop();
   st.peek();
+  display(st);
   console.log(JSON.stringify(st.peek()));
 }
 
