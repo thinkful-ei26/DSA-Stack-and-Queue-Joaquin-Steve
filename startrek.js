@@ -45,19 +45,39 @@ function display(stack) {
 }
 
 function matchingParenthesis(s) {
+  // let stack = new _StarTrek()
+
+  // for (let i = 0; i < s.length; i++) {
+  //   let word = s[i]
+
+  //   if (word === '(') stack.push(s[i])
+  //   if (word === ')') {
+  //     let char = stack.pop()
+  //     if (char === ')') {
+  //       return false
+  //     }
+  //   }
+  // }
+  // return isEmpty(stack)
   let stack = new _StarTrek()
 
   for (let i = 0; i < s.length; i++) {
     let word = s[i]
+    if (word === '(') {
+      stack.push(s[i])
+      display(stack)
+    }
+    if (isEmpty(stack)) {
+      return false
+    }
 
-    if (word === '(') stack.push(s[i])
     if (word === ')') {
-      let char = stack.pop()
-      if (char === ')') {
-        return false
-      }
+      let x = stack.top
+      stack.pop()
+      display(stack)
     }
   }
+
   return isEmpty(stack)
 }
 
