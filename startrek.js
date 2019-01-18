@@ -44,47 +44,26 @@ function display(stack) {
   }
 }
 
-function matchingParenthesis(s) {
-  // let stack = new _StarTrek()
-
-  // for (let i = 0; i < s.length; i++) {
-  //   let word = s[i]
-
-  //   if (word === '(') stack.push(s[i])
-  //   if (word === ')') {
-  //     let char = stack.pop()
-  //     if (char === ')') {
-  //       return false
-  //     }
-  //   }
-  // }
-  // return isEmpty(stack)
+function matchingParenthesis(str) {
   let stack = new _StarTrek()
-
-  for (let i = 0; i < s.length; i++) {
-    let word = s[i]
-    if (word === '(') {
-      stack.push(s[i])
-      display(stack)
-    }
-    if (isEmpty(stack)) {
+  for (let i = 0; i <= str.length; i++) {
+    if (str[i] === '(') {
+      stack.push(str[i])
+    } else if (str[i] === ')' && isEmpty(stack)) {
       return false
-    }
-
-    if (word === ')') {
-      let x = stack.top
+    } else if (str[i] === ')' && !isEmpty(stack)) {
       stack.pop()
-      display(stack)
     }
   }
-
   return isEmpty(stack)
 }
-
-// get a string, push the entire string to a fresh stack.
-// create two counters leftside and rightside
-// then, pop each character. if that character is '(' increment leftside ++, else rightside ++
-// compare counters if !== return false.
+// 1.) Create a temporary stack say tmpStack.
+// 2.) While input stack is NOT empty do this:
+//        Pop an element from input stack call it temp
+//        while temporary stack is NOT empty and top of temporary stack is greater than temp,
+//        pop from temporary stack and push it to the input stack
+// 3.) push temp in temporary stack
+// 4.) The sorted numbers are in tmpStack
 
 function is_palindrome(s) {
   s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, '')
@@ -117,7 +96,7 @@ function main() {
   // display(st)
   // console.log(isEmpty(st))
   //   console.log(is_palindrome('1001'));
-  console.log(matchingParenthesis('( ) () ( )'))
+  console.log(matchingParenthesis('( ) ) ( ( )'))
 }
 
 main()
