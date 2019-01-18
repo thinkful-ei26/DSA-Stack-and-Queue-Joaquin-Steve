@@ -44,28 +44,19 @@ function display(stack) {
   }
 }
 
-function matchingParenthesis(s) {
+function matchingParenthesis(str) {
   let stack = new _StarTrek();
-  if (!isEmpty) {
-    for (let i = 0; i < s.length; i++) {
-      let word = s[i];
-      if (word === '(') {
-        stack.push(s[i]);
-      } else if (word === ')') {
-        stack.pop();
-      }
+  for (let i = 0; i <= str.length; i++) {
+    if (str[i] === '(') {
+      stack.push(str[i]);
+    } else if (str[i] === ')' && isEmpty(stack)) {
+      return false;
+    } else if (str[i] === ')' && !isEmpty(stack)) {
+      stack.pop();
     }
-
-    return isEmpty(stack);
-  } else {
-    return false;
   }
+  return isEmpty(stack);
 }
-
-// get a string, push the entire string to a fresh stack.
-// create two counters leftside and rightside
-// then, pop each character. if that character is '(' increment leftside ++, else rightside ++
-// compare counters if !== return false.
 
 function is_palindrome(s) {
   s = s.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
@@ -98,7 +89,7 @@ function main() {
   // display(st)
   // console.log(isEmpty(st))
   //   console.log(is_palindrome('1001'));
-  console.log(matchingParenthesis('()'));
+  console.log(matchingParenthesis('( ) ) ( ( )'));
 }
 
 main();
